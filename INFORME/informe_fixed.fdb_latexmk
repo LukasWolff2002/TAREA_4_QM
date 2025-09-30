@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1759242390.79052 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/TAREAS/TAREA_5_QM/INFORME/informe_fixed.tex" "informe_fixed.pdf" "informe_fixed" 1759242391.21356 0
-  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/TAREAS/TAREA_5_QM/INFORME/informe_fixed.tex" 1759242390.61831 3676 e455d676a063db47368552ecea27a219 ""
+["pdflatex"] 1759242822.29291 "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/TAREAS/TAREA_5_QM/INFORME/informe_fixed.tex" "informe_fixed.pdf" "informe_fixed" 1759242822.74464 0
+  "/Users/lukaswolff/Desktop/25_20/QUANTUM_MECHANICS/TAREAS/TAREA_5_QM/INFORME/informe_fixed.tex" 1759242736.91735 3655 5d71efa1ca922b8709c1c11e9a071f03 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -70,8 +70,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710685657.15962 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1710685568 8221436 9feefa88f893c4604437a3bcd513880c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "informe_fixed.aux" 1759242391.1726 1064 7c63497b102693c1475277b3bf850cab "pdflatex"
-  "informe_fixed.tex" 1759242390.61831 3676 e455d676a063db47368552ecea27a219 ""
+  "informe_fixed.aux" 1759242822.70305 1064 7c63497b102693c1475277b3bf850cab "pdflatex"
+  "informe_fixed.tex" 1759242736.91735 3655 5d71efa1ca922b8709c1c11e9a071f03 ""
   (generated)
   "informe_fixed.aux"
   "informe_fixed.log"

@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, bm}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\newcommand{\ii}{\mathrm{i}}
+
+\title{Tarea 5 Tecnologías Cuánticas}
+\author{Lukas Wolff, 
+        Patricio Palacios,
+        Juan Artigas,
+        Nicolas Mora,
+        Antonia Dias,
+        Benjamin Tapia}
+\date{}
+
+\begin{document}
+\maketitle
+
+% =========================
+\section{Scripts de Bob y Alice}
+
+Se han desarrollado dos scripts, \texttt{alice\_choices.py} y \texttt{bob\_choices.py}, que generan las elecciones de bases para Alice y Bob, respectivamente. Estos scripts seleccionan específicamente los ángulos necesarios para el test CHSH: $0^\circ$ y $45^\circ$ para Alice, y $22.5^\circ$ y $-22.5^\circ$ para Bob. Para asegurar la reproducibilidad de los resultados, se utilizan semillas distintas: 1001 para Alice y 2002 para Bob.
+
+Los archivos funcionan de la siguiente manera:
+
+\section{Script del Árbitro}
+
+El árbitro ejecuta el script \texttt{referee\_quantum.py}, que implementa el test de Bell usando el criterio CHSH (Clauser-Horne-Shimony-Holt). El proceso se desarrolla de la siguiente manera:
+
+\subsection{Generación de Resultados Cuánticos}
+
+Para cada par de mediciones con ángulos $\theta_A$ (Alice) y $\theta_B$ (Bob), el script simula un estado entrelazado Bell $|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$ mediante la función \texttt{sample\_joint()}, que:
+
+\begin{enumerate}
+    \item Calcula la correlación teórica: $E = \cos(2(\theta_A - \theta_B))$
+    \item Define las probabilidades cuánticas para los cuatro resultados posibles:
+    \begin{align}
+        P(+1,+1) &= P(-1,-1) = \frac{1+E}{4} \\
+        P(+1,-1) &= P(-1,+1) = \frac{1-E}{4}
+    \end{align}
+    \item Muestrea aleatoriamente un resultado según estas probabilidades
+\end{enumerate}
+
+\subsection{Cálculo de Correlaciones}
+
+El script calcula cuatro correlaciones específicas $E(a,b)$ para las combinaciones de bases del test CHSH:
+
+\begin{itemize}
+    \item $E(a,b)$: bases $a = 0^\circ$ y $b = 22.5^\circ$
+    \item $E(a,b')$: bases $a = 0^\circ$ y $b' = -22.5^\circ$
+    \item $E(a',b)$: bases $a' = 45^\circ$ y $b = 22.5^\circ$
+    \item $E(a',b')$: bases $a' = 45^\circ$ y $b' = -22.5^\circ$
+\end{itemize}
+
+Para cada combinación de bases, la correlación se calcula como:
+$$E(a,b) = \langle A_k \cdot B_k \rangle = \frac{1}{N} \sum_{k=1}^{N} A_k \cdot B_k$$
+
+donde $A_k$ y $B_k$ son los resultados ($\pm 1$) de Alice y Bob para el par $k$, y $N$ es el número de mediciones para esa combinación específica de bases.
+
+\subsection{Parámetro CHSH}
+
+El parámetro CHSH se calcula como:
+$$S = E(a,b) + E(a,b') + E(a',b) - E(a',b')$$
+
+\textbf{Interpretación del parámetro CHSH:}
+\begin{itemize}
+    \item $|S| \leq 2$: Compatible con teorías de variables ocultas locales (límite clásico)
+    \item $2 < |S| \leq 2\sqrt{2} \approx 2.828$: Violación de desigualdades de Bell, evidencia de entrelazamiento cuántico
+    \item $|S| > 2\sqrt{2}$: Imposible según la mecánica cuántica (límite de Tsirelson)
+\end{itemize}
+
+\section{Resutados}
+
+\subsection{Bases Iniciales}
+
+Sobre las bases iniciales de Alice y Bob, se obtiene una correlacion de 2.77 lo que indica que se cumple el limite inferior de 2 y el superior de 2.828, lo que indica que tales bases se encuentran entrelazadas.
+
+A continuacion se realizara el analisis sobre un conjunto de bases, donde se estudiara como se ven afectadas las correlaciones y el parametro CHSH.
+
+\section{Notas}
+
+Es importante notar que para todas las bases se mantuvieron las bases tanto para Alice y Bob, asi como, el numero de mediciones (1000).
+
+\end{document}
